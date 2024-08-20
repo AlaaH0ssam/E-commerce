@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'StartPage.dart';
 import 'CreateAccount.dart';
 import 'login.dart';
-
+import 'splash.dart';
 void main() {
   runApp(const PetShop());
 }
@@ -16,7 +16,8 @@ class PetShop extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => StartPage(),
+         '/': (context) => splashScreen(),
+        '/start': (context) => StartPage(),
         '/create-account': (context) => CreateaccountScreen(),
         '/login': (context) => loginscreen(), // Adding LoginScreen route
       },
