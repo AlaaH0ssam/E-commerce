@@ -54,21 +54,21 @@ class StartPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/create-account');
               },
-              child: Text(
-                'Get Started',
-                style: TextStyle(
-                  fontSize: screenWidth * 0.05,
-                  color: Colors.white,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xfff49c63),
+                backgroundColor: const Color(0xfff49c63),
                 padding: EdgeInsets.symmetric(
                   horizontal: screenWidth * 0.2,
                   vertical: screenHeight * 0.02,
                 ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              child: Text(
+                'Get Started',
+                style: TextStyle(
+                  fontSize: screenWidth * 0.05,
+                  color: Colors.white,
                 ),
               ),
             ),

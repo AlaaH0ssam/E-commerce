@@ -16,9 +16,9 @@ class PetShop extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => StartPage(),
+        '/': (context) => const StartPage(),
         '/create-account': (context) => CreateaccountScreen(),
-        '/login': (context) => loginscreen(), // Adding LoginScreen route
+        '/login': (context) => loginscreen(),
       },
     );
   }
