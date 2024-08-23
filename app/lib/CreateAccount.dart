@@ -63,16 +63,17 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(50),
                       borderSide: const BorderSide(
-                          color: Color(0xfff49c63), width: 1.0),
+                          color: const Color.fromARGB(255, 231, 205, 194),
+                          width: 1.0),
                     ),
                     labelText: 'Username',
                     labelStyle: const TextStyle(
-                      color: Color(0xfff49c63),
+                      color: const Color.fromARGB(255, 231, 205, 194),
                       fontWeight: FontWeight.w500,
                     ),
                     prefixIcon: const Icon(
                       Icons.person,
-                      color: Color(0xfff49c63),
+                      color: const Color.fromARGB(255, 231, 205, 194),
                     ),
                   ),
                 ),
@@ -91,16 +92,17 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(50),
                       borderSide: const BorderSide(
-                          color: Color(0xfff49c63), width: 1.0),
+                          color: const Color.fromARGB(255, 231, 205, 194),
+                          width: 1.0),
                     ),
                     labelText: 'Email',
                     labelStyle: const TextStyle(
-                      color: Color(0xfff49c63),
+                      color: const Color.fromARGB(255, 231, 205, 194),
                       fontWeight: FontWeight.w500,
                     ),
                     prefixIcon: const Icon(
                       Icons.email,
-                      color: Color(0xfff49c63),
+                      color: const Color.fromARGB(255, 231, 205, 194),
                     ),
                   ),
                   keyboardType: TextInputType.emailAddress,
@@ -113,10 +115,6 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                       return 'Please enter Password';
                     } else if (value.length < 8) {
                       return 'Password must be at least 8 characters long';
-                    } else if (!RegExp(
-                            r'(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~])')
-                        .hasMatch(value)) {
-                      return 'Password must include upper, lower, number, and symbol';
                     }
                     return null;
                   },
@@ -124,17 +122,18 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(50),
-                      borderSide:
-                          BorderSide(color: Color(0xfff49c63), width: 1.0),
+                      borderSide: BorderSide(
+                          color: const Color.fromARGB(255, 231, 205, 194),
+                          width: 1.0),
                     ),
                     labelText: 'Password',
                     labelStyle: const TextStyle(
-                      color: Color(0xfff49c63),
+                      color: const Color.fromARGB(255, 231, 205, 194),
                       fontWeight: FontWeight.w500,
                     ),
                     prefixIcon: const Icon(
                       Icons.password,
-                      color: Color(0xfff49c63),
+                      color: const Color.fromARGB(255, 231, 205, 194),
                     ),
                   ),
                 ),
@@ -158,11 +157,11 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                         const SnackBar(
                             content: Text('Account created successfully')),
                       );
-                      //////////////////HOME PAGE////////////////////////////////////////
+                      Navigator.pushNamed(context, '/Home');
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xfff49c63),
+                    backgroundColor: const Color.fromARGB(255, 231, 205, 194),
                     padding: EdgeInsets.symmetric(
                       horizontal: screenWidth * 0.2,
                       vertical: screenHeight * 0.02,

@@ -98,13 +98,6 @@ class AccountScreen extends StatelessWidget {
                                           Navigator.of(context).pop();
                                         },
                                       ),
-                                      ListTile(
-                                        title: const Text('System Default'),
-                                        onTap: () {
-                                          // Set theme to system default
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
                                     ],
                                   ),
                                 );
@@ -114,42 +107,7 @@ class AccountScreen extends StatelessWidget {
                         ),
                         ListTile(
                           title: const Text('Language'),
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: const Text('Choose Language'),
-                                  content: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      ListTile(
-                                        title: const Text('English'),
-                                        onTap: () {
-                                          // Set language to English
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: const Text('Spanish'),
-                                        onTap: () {
-                                          // Set language to Spanish
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: const Text('French'),
-                                        onTap: () {
-                                          // Set language to French
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                            );
-                          },
+                          onTap: () {},
                         ),
                       ],
                     ),
@@ -220,7 +178,8 @@ class AccountScreen extends StatelessWidget {
                               ///////////////LOG OUT/////////////////
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xfff49c63),
+                              backgroundColor:
+                                  const Color.fromARGB(255, 231, 205, 194),
                               padding: EdgeInsets.symmetric(
                                 horizontal: screenWidth * 0.2,
                                 vertical: screenHeight * 0.02,

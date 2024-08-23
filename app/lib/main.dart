@@ -1,7 +1,11 @@
+import 'package:app/onboard.dart';
+import 'package:app/spalsh.dart';
 import 'package:flutter/material.dart';
-import 'StartPage.dart';
+//import 'StartPage.dart';
 import 'CreateAccount.dart';
 import 'login.dart';
+import 'HomeScreen.dart';
+import 'Accountscreen.dart';
 
 void main() {
   runApp(const PetShop());
@@ -16,9 +20,12 @@ class PetShop extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const StartPage(),
+        '/': (context) => splashScreen(),
+        '/onboard': (context) => OnboardingScreen(),
         '/create-account': (context) => CreateaccountScreen(),
         '/login': (context) => loginscreen(),
+        '/Home': (context) => HomeScreen(),
+        '/Account': (context) => AccountScreen(username: ''),
       },
     );
   }

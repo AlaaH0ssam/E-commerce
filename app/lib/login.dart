@@ -56,17 +56,18 @@ class loginscreen extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
-                        borderSide: const BorderSide(
-                            color: Color(0xfff49c63), width: 1.0),
+                        borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 231, 205, 194),
+                            width: 1.0),
                       ),
                       labelText: 'Email',
-                      labelStyle: const TextStyle(
-                        color: Color(0xfff49c63),
+                      labelStyle: TextStyle(
+                        color: const Color.fromARGB(255, 231, 205, 194),
                         fontWeight: FontWeight.w500,
                       ),
-                      prefixIcon: const Icon(
+                      prefixIcon: Icon(
                         Icons.email,
-                        color: Color(0xfff49c63),
+                        color: const Color.fromARGB(255, 231, 205, 194),
                       ),
                     ),
                     keyboardType: TextInputType.emailAddress,
@@ -85,17 +86,18 @@ class loginscreen extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
-                        borderSide: const BorderSide(
-                            color: Color(0xfff49c63), width: 1.0),
+                        borderSide: BorderSide(
+                            color: const Color.fromARGB(255, 231, 205, 194),
+                            width: 1.0),
                       ),
                       labelText: 'Password',
-                      labelStyle: const TextStyle(
-                        color: Color(0xfff49c63),
+                      labelStyle: TextStyle(
+                        color: const Color.fromARGB(255, 231, 205, 194),
                         fontWeight: FontWeight.w500,
                       ),
-                      prefixIcon: const Icon(
+                      prefixIcon: Icon(
                         Icons.password,
-                        color: Color(0xfff49c63),
+                        color: const Color.fromARGB(255, 231, 205, 194),
                       ),
                     ),
                   ),
@@ -106,7 +108,7 @@ class loginscreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context, '/create-account');
                     },
-                    child: const Text(
+                    child: Text(
                       'Don’t have an account? create account',
                       style: TextStyle(
                         color: Colors.black,
@@ -119,24 +121,24 @@ class loginscreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       if (formkey.currentState!.validate()) {
-                        ////////////////////////HOME PAGE////////////////////////////////////////////
+                        Navigator.pushNamed(context, '/Home');
                       }
                     },
+                    child: Text(
+                      'Get Started',
+                      style: TextStyle(
+                        fontSize: screenWidth * 0.05,
+                        color: Colors.white,
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xfff49c63),
+                      backgroundColor: const Color.fromARGB(255, 231, 205, 194),
                       padding: EdgeInsets.symmetric(
                         horizontal: screenWidth * 0.2,
                         vertical: screenHeight * 0.02,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                        fontSize: screenWidth * 0.05,
-                        color: Colors.white,
                       ),
                     ),
                   ),
