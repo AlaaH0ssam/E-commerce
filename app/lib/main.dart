@@ -1,11 +1,10 @@
-import 'package:app/onboard.dart';
-import 'package:app/spalsh.dart';
+import 'spalsh.dart';
 import 'package:flutter/material.dart';
-//import 'StartPage.dart';
 import 'CreateAccount.dart';
 import 'login.dart';
 import 'HomeScreen.dart';
 import 'Accountscreen.dart';
+import 'onboardscreens.dart';
 
 void main() {
   runApp(const PetShop());

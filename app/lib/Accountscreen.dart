@@ -30,8 +30,8 @@ class AccountScreen extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: screenWidth * 0.09,
-                      backgroundImage: const AssetImage(
-                          'assets/images/Yellow Gradient Facebook Profile Picture.png'),
+                      backgroundImage:
+                          const AssetImage('../assets/images/ProfileIcon.png'),
                     ),
                     SizedBox(
                       width: screenWidth * 0.04,

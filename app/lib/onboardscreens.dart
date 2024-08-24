@@ -49,12 +49,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 text: 'Discover all you need in one place',
               ),
               _buildIntroPage(
-                imagePath: '../assets/images/HomeF.png',
+                imagePath: '../assets/images/onboard.png',
                 text: 'Easy to navigate with the latest editions',
               ),
               _buildIntroPage(
-                imagePath: '../assets/images/HomeF.png',
-                text: 'Start your journey to make your dream house',
+                imagePath: '../assets/images/onnboard.png',
+                text: 'Build your unique room ',
               ),
             ],
           ),
@@ -62,46 +62,84 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             bottom: 16,
             left: 0,
             right: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                // Skip button
-                ElevatedButton(
-                  onPressed: () async {
-                    await OnboardingService.setOnboardingCompleted();
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
-                    );
-                  },
-                  child: const Text('Skip'),
+                // Dot Indicator
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16.0),
+                  child: SmoothPageIndicator(
+                    controller: _controller,
+                    count: 3,
+                    effect: const WormEffect(
+                      dotHeight: 8,
+                      dotWidth: 8,
+                      activeDotColor: Colors.black,
+                      dotColor: Colors.grey,
+                    ),
+                  ),
                 ),
-
-                // Dot indicator
-                SmoothPageIndicator(controller: _controller, count: 3),
-
-                // Next or Done button
-                isLastPage
-                    ? ElevatedButton(
-                        onPressed: () async {
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Skip button
+                    ElevatedButton(
+                      onPressed: () async {
+                        await OnboardingService.setOnboardingCompleted();
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 24, vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        'Skip',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    // Next or Done button
+                    ElevatedButton(
+                      onPressed: () async {
+                        if (isLastPage) {
                           await OnboardingService.setOnboardingCompleted();
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => HomeScreen()),
                           );
-                        },
-                        child: const Text('Done'),
-                      )
-                    : ElevatedButton(
-                        onPressed: () {
+                        } else {
                           _controller.nextPage(
                             duration: const Duration(milliseconds: 400),
                             curve: Curves.easeIn,
                           );
-                        },
-                        child: const Text('Next'),
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 24, vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
+                      child: Text(
+                        isLastPage ? 'Done' : 'Next',
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -120,7 +158,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Expanded(
             child: Center(
@@ -143,27 +181,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              CircleAvatar(
-                radius: 4,
-                backgroundColor: Colors.grey,
-              ),
-              SizedBox(width: 8),
-              CircleAvatar(
-                radius: 4,
-                backgroundColor: Colors.black,
-              ),
-              SizedBox(width: 8),
-              CircleAvatar(
-                radius: 4,
-                backgroundColor: Colors.grey,
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 25),
         ],
       ),
     );

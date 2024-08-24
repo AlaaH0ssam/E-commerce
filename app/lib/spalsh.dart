@@ -1,17 +1,16 @@
-import 'package:app/onboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
+import 'onboardscreens.dart';
 
 class splashScreen extends StatefulWidget {
   const splashScreen({super.key});
 
   @override
-  State<splashScreen> createState() => _splashScreenState();
+  State<splashScreen> createState() => _SplashScreenState();
 }
 
-class _splashScreenState extends State<splashScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<splashScreen> {
   @override
   void initState() {
     super.initState();
@@ -35,32 +34,44 @@ class _splashScreenState extends State<splashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xfff49c63), Colors.white],
-              begin: Alignment.topCenter,
-              end: AlignmentDirectional.bottomEnd),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.pets,
-              size: 80,
-              color: Colors.white,
+      body: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('../assets/images/Furniture.png'),
+                fit: BoxFit.cover,
+              ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Text('Happy Pet!',
-                style: TextStyle(
-                    fontStyle: FontStyle.italic,
+          ),
+          Positioned(
+            bottom: 24,
+            right: 24,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'HomeCraft',
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 151, 132, 125),
+                    fontSize: 34,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Modern Furniture',
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30))
-          ],
-        ),
+                    fontSize: 18.5,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
