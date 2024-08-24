@@ -1,3 +1,4 @@
+import 'package:app/CreateAccount.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:app/HomeScreen.dart';
@@ -114,7 +115,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomeScreen()),
+                                builder: (context) => CreateaccountScreen()),
                           );
                         } else {
                           _controller.nextPage(

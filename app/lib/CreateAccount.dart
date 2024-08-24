@@ -33,7 +33,7 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                   'Create New Account',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: const Color.fromARGB(255, 151, 132, 125),
                     fontWeight: FontWeight.bold,
                     fontSize: screenWidth * 0.1,
                   ),
