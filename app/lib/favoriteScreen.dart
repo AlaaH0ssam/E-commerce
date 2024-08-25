@@ -12,14 +12,14 @@ class favoriteScreen extends StatelessWidget {
  */
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(
+        title: 
+           Text(
             'WishList',
             style: TextStyle(
               color: const Color.fromARGB(255, 69, 66, 66),
               fontSize: 16.5,
               fontWeight: FontWeight.bold,
-            ),
+            
           ),
         ),
       ),
