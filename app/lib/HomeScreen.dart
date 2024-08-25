@@ -78,18 +78,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     height: 150,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 231, 205, 194)),
-                  ),
-                  Positioned(
-                    top: -20,
-                    right: -20,
-                    child: Container(
-                      height: 160,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 221, 188, 178),
-                        borderRadius: BorderRadius.circular(160),
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        image: AssetImage('../assets/images/Home.jpg'),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -107,14 +99,13 @@ class _HomeScreenState extends State<HomeScreen> {
             // Navigate to different screens based on the index
             switch (_currentIndex) {
               case 0:
-                // WE are already on home SO no actions
+                // We are already on home, so no actions
                 break;
               case 1:
-                //////////////Button to go to fav screen/////////////////////////////////
+                Navigator.pushNamed(context, '/favscreen');
                 break;
               case 2:
                 Navigator.pushNamed(context, '/Account');
-
                 break;
             }
           });

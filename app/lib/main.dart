@@ -1,3 +1,5 @@
+import 'package:app/favoriteScreen.dart';
+
 import 'spalsh.dart';
 import 'package:flutter/material.dart';
 import 'CreateAccount.dart';
@@ -25,6 +27,7 @@ class PetShop extends StatelessWidget {
         '/login': (context) => loginscreen(),
         '/Home': (context) => HomeScreen(),
         '/Account': (context) => AccountScreen(username: ''),
+        '/favscreen': (context) => favoriteScreen(),
       },
     );
   }

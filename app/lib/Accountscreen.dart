@@ -130,15 +130,11 @@ class AccountScreen extends StatelessWidget {
                       children: <Widget>[
                         ListTile(
                           title: const Text('Contact Us'),
-                          onTap: () {
-                            // Navigate to or display the "Contact Us" page
-                          },
+                          onTap: () {},
                         ),
                         ListTile(
                           title: const Text('Privacy Policy'),
-                          onTap: () {
-                            // Navigate to or display the "Privacy Policy" page
-                          },
+                          onTap: () {},
                         ),
                       ],
                     ),
@@ -151,9 +147,7 @@ class AccountScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            onPressed: () {
-                              ///////////////DELETE MY ACCOUNT/////////////////
-                            },
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                               padding: EdgeInsets.symmetric(
@@ -174,9 +168,7 @@ class AccountScreen extends StatelessWidget {
                           ),
                           SizedBox(height: screenHeight * 0.02),
                           ElevatedButton(
-                            onPressed: () {
-                              ///////////////LOG OUT/////////////////
-                            },
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black54,
                               padding: EdgeInsets.symmetric(
