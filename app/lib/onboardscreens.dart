@@ -27,7 +27,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     if (isOnboardingCompleted) {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => CreateaccountScreen()),
       );
     }
   }

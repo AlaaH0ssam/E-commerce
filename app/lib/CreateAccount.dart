@@ -28,34 +28,35 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: screenHeight * 0.08),
+                SizedBox(height: screenHeight * 0.09),
                 Text(
-                  'Create New Account',
+                  'Greetings!',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    color: const Color.fromARGB(255, 151, 132, 125),
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: screenWidth * 0.1,
                   ),
                 ),
-                SizedBox(height: screenHeight * 0.0599),
+                SizedBox(height: screenHeight * 0.02),
                 Text(
-                  'Water is life. Water is a basic human need. In various lines of life, humans need water.',
+                  'We are glad to see you here',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    color: const Color.fromARGB(115, 62, 46, 46),
+                    color: Colors.black45,
                     fontSize: screenWidth * 0.04,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.09),
+                // Username Field
                 TextFormField(
                   onChanged: (value) {
                     username = value;
                   },
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please enter username';
+                      return 'Please enter Username';
                     }
                     return null;
                   },
@@ -68,16 +69,17 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                     ),
                     labelText: 'Username',
                     labelStyle: const TextStyle(
-                      color: const Color.fromARGB(255, 231, 205, 194),
+                      color: Color.fromARGB(64, 0, 0, 0),
                       fontWeight: FontWeight.w500,
                     ),
                     prefixIcon: const Icon(
                       Icons.person,
-                      color: const Color.fromARGB(255, 231, 205, 194),
+                      color: Color.fromARGB(81, 0, 0, 0),
                     ),
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.02),
+                // Email Field
                 TextFormField(
                   onChanged: (value) {
                     email = value;
@@ -97,19 +99,22 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                     ),
                     labelText: 'Email',
                     labelStyle: const TextStyle(
-                      color: const Color.fromARGB(255, 231, 205, 194),
+                      color: Color.fromARGB(64, 0, 0, 0),
                       fontWeight: FontWeight.w500,
                     ),
                     prefixIcon: const Icon(
                       Icons.email,
-                      color: const Color.fromARGB(255, 231, 205, 194),
+                      color: Color.fromARGB(81, 0, 0, 0),
                     ),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(height: screenHeight * 0.02),
+                // Password Field
                 TextFormField(
-                  autofillHints: [AutofillHints.password],
+                  onChanged: (value) {
+                    password = value;
+                  },
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter Password';
@@ -122,34 +127,23 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(50),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                           color: const Color.fromARGB(255, 231, 205, 194),
                           width: 1.0),
                     ),
                     labelText: 'Password',
                     labelStyle: const TextStyle(
-                      color: const Color.fromARGB(255, 231, 205, 194),
+                      color: Color.fromARGB(64, 0, 0, 0),
                       fontWeight: FontWeight.w500,
                     ),
                     prefixIcon: const Icon(
-                      Icons.password,
-                      color: const Color.fromARGB(255, 231, 205, 194),
+                      Icons.lock,
+                      color: Color.fromARGB(81, 0, 0, 0),
                     ),
                   ),
+                  keyboardType: TextInputType.visiblePassword,
                 ),
-                SizedBox(height: screenHeight * 0.1),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                  child: const Text(
-                    'Have an account? Login',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                SizedBox(height: screenHeight * 0.009),
+                SizedBox(height: screenHeight * 0.083),
                 ElevatedButton(
                   onPressed: () {
                     if (formkey.currentState!.validate()) {
@@ -161,9 +155,9 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 231, 205, 194),
+                    backgroundColor: Colors.black,
                     padding: EdgeInsets.symmetric(
-                      horizontal: screenWidth * 0.2,
+                      horizontal: screenWidth * 0.085,
                       vertical: screenHeight * 0.02,
                     ),
                     shape: RoundedRectangleBorder(
@@ -171,10 +165,22 @@ class _CreateaccountScreenState extends State<CreateaccountScreen> {
                     ),
                   ),
                   child: Text(
-                    'Get Started',
+                    'Create account',
                     style: TextStyle(
                       fontSize: screenWidth * 0.05,
                       color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.02),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  child: const Text(
+                    'Already have an account? Sign in',
+                    style: TextStyle(
+                      color: Colors.black,
                     ),
                   ),
                 ),

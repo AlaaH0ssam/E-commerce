@@ -178,8 +178,7 @@ class AccountScreen extends StatelessWidget {
                               ///////////////LOG OUT/////////////////
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 231, 205, 194),
+                              backgroundColor: Colors.black54,
                               padding: EdgeInsets.symmetric(
                                 horizontal: screenWidth * 0.2,
                                 vertical: screenHeight * 0.02,

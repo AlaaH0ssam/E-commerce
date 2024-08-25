@@ -123,21 +123,21 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: const Color.fromARGB(255, 231, 205, 194),
+              color: Colors.black54,
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.favorite,
-              color: const Color.fromARGB(255, 231, 205, 194),
+              color: Colors.black54,
             ),
             label: 'Favorites',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.account_circle,
-              color: const Color.fromARGB(255, 231, 205, 194),
+              color: Colors.black54,
             ),
             label: 'Account',
           ),
