@@ -60,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ],
           ),
           Positioned(
-            bottom: 16,
+            bottom: 25,
             left: 0,
             right: 0,
             child: Column(
@@ -68,7 +68,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: [
                 // Dot Indicator
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
+                  padding: const EdgeInsets.only(bottom: 10.0),
                   child: SmoothPageIndicator(
                     controller: _controller,
                     count: 3,
@@ -171,7 +171,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           const SizedBox(height: 20),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 70),
             child: Text(
               text,
               textAlign: TextAlign.center,
@@ -182,7 +182,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: 50),
         ],
       ),
     );
