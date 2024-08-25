@@ -89,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         await OnboardingService.setOnboardingCompleted();
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                          MaterialPageRoute(builder: (context) => CreateaccountScreen()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
