@@ -150,41 +150,46 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   Widget _buildIntroPage({required String imagePath, required String text}) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFFEBEDEE), Color(0xFFDAE0E6)],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
+  return Container(
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Color(0xFFEBEDEE), Color(0xFFDAE0E6)],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Expanded(
-            child: Center(
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.contain,
-              ),
-            ),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center, 
+      children: [
+        Expanded(
+          flex: 2, 
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover, 
           ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 70),
+        ),
+        SizedBox(height: 70,),
+        Expanded(
+          flex: 1, 
+         
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          
             child: Text(
               text,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 22, 
                 fontWeight: FontWeight.bold,
                 color: Colors.black87,
               ),
             ),
           ),
-          const SizedBox(height: 50),
-        ],
-      ),
-    );
-  }
+        ),
+       
+      ],
+    ),
+  );
+}
+
 }
