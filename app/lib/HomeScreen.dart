@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15,vertical: 30),
         child: Column(
           children: [
             // Search bar and notifications
@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             // Promotion Banner
             Container(
-              margin: EdgeInsets.symmetric(vertical: 15),
+              margin: EdgeInsets.symmetric(vertical: 25),
               child: Stack(
                 children: [
                   Container(
@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    height: 150,
+                    height: 155,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
