@@ -1,20 +1,26 @@
-/*import 'package:flutter/material.dart';
+import 'package:app/models/furniture.dart';
+import 'package:flutter/material.dart';
 
-class FavoriteProvider with ChangeNotifier {
-  List<Product> _favouriteProducts = [];
+class FavoritesProvider with ChangeNotifier {
+  final List<Furniture> _favoriteItems = [];
 
-  List<Product> get favouriteProduct => _favouriteProducts;
+  List<Furniture> get favoriteItems => _favoriteItems;
 
-  void updateFavoriteStatus(Product product) {
-    if (_favouriteProducts.contains(product)) {
-      _favouriteProducts.remove(product);
-    } else {
-      _favouriteProducts.add(product);
+  void addFavorite(Furniture item) {
+    if (!_favoriteItems.contains(item)) {
+      _favoriteItems.add(item);
+      notifyListeners(); // Notify listeners when the list changes
     }
-    notifyListeners();
   }
 
-  bool isFavorite(Product product) {
-    return _favouriteProducts.contains(product);
+  void removeFavorite(Furniture item) {
+    if (_favoriteItems.contains(item)) {
+      _favoriteItems.remove(item);
+      notifyListeners(); // Notify listeners when the list changes
+    }
   }
-}*/
+
+  bool isFavorite(Furniture item) {
+    return _favoriteItems.contains(item);
+  }
+}

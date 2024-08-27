@@ -60,7 +60,6 @@ class _SplashScreenState extends State<splashScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-               
                 Text(
                   'Modern Furniture',
                   style: TextStyle(

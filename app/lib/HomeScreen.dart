@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'cubits/get_decoration_cubit/home_decoration_cubit.dart';
+import 'cubits/get_decoration_cubit/home_decoration_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,13 +13,22 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
+  void _navigateToProductDetails(BuildContext context, item) {
+    Navigator.pushNamed(
+      context,
+      '/productDetails',
+      arguments: item,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        child: ListView(
+        child: Column(
           children: [
+            // Search bar and notifications
             Container(
               margin: EdgeInsets.only(top: 10),
               child: Row(
@@ -52,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            // Promotion Banner
             Container(
               margin: EdgeInsets.symmetric(vertical: 15),
               child: Stack(
@@ -80,12 +93,49 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
-                        image: AssetImage('../assets/images/Home.jpg'),
+                        image: AssetImage('assets/images/Home.jpg'),
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ],
+              ),
+            ),
+            // Data List
+            Expanded(
+              child: BlocBuilder<HomeDecorationCubit, HomeDecorationState>(
+                builder: (context, state) {
+                  if (state is HomeDecorationLoading) {
+                    return Center(child: CircularProgressIndicator());
+                  } else if (state is HomeDecorationSuccess) {
+                    final furnitureList = state.furnitureList;
+                    return ListView.builder(
+                      itemCount: furnitureList.length,
+                      itemBuilder: (context, index) {
+                        final item = furnitureList[index];
+                        return ListTile(
+                          contentPadding: EdgeInsets.symmetric(vertical: 10),
+                          leading: item.imageUrl.isNotEmpty
+                              ? Image.network(
+                                  item.imageUrl,
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.cover,
+                                )
+                              : Icon(Icons.image,
+                                  size: 50), // Placeholder icon if no image
+                          title: Text(item.title),
+                          trailing: Text('\$${item.price.toStringAsFixed(2)}'),
+                          onTap: () => _navigateToProductDetails(context, item),
+                        );
+                      },
+                    );
+                  } else if (state is HomeDecorationFailure) {
+                    return Center(child: Text('Error: ${state.error}'));
+                  } else {
+                    return Center(child: Text('Unexpected state'));
+                  }
+                },
               ),
             ),
           ],

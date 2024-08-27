@@ -1,7 +1,6 @@
 import 'package:app/CreateAccount.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:app/HomeScreen.dart';
 import 'onboarding_service.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -89,7 +88,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         await OnboardingService.setOnboardingCompleted();
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (context) => CreateaccountScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => CreateaccountScreen()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -150,46 +150,44 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   Widget _buildIntroPage({required String imagePath, required String text}) {
-  return Container(
-    decoration: const BoxDecoration(
-      gradient: LinearGradient(
-        colors: [Color(0xFFEBEDEE), Color(0xFFDAE0E6)],
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-      ),
-    ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center, 
-      children: [
-        Expanded(
-          flex: 2, 
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover, 
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFFEBEDEE), Color(0xFFDAE0E6)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
-        SizedBox(height: 70,),
-        Expanded(
-          flex: 1, 
-         
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 22, 
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 2,
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
+          ),
+          SizedBox(
+            height: 70,
+          ),
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
               ),
             ),
           ),
-        ),
-       
-      ],
-    ),
-  );
-}
-
+        ],
+      ),
+    );
+  }
 }
